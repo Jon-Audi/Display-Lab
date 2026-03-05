@@ -1,6 +1,6 @@
 # ESP32 RGB Display Performance
 
-ESP32-S3 supports RGB displays using the LCD_CAM peripheral.
+The ESP32-S3 supports RGB displays using the LCD_CAM peripheral.
 
 Rendering pipeline:
 
@@ -10,14 +10,24 @@ Framebuffer
 ↓
 DMA
 ↓
-LCD_CAM peripheral
+LCD_CAM
 ↓
 Display
 
-Framebuffer size:
+---
 
-800 × 480 × 2 bytes = 768 KB
+## Framebuffer Size
 
-Recommended configuration:
+```
+800 × 480 × 2 bytes
 
-Double framebuffer using PSRAM.
+= 768 KB
+```
+
+---
+
+## Performance Tips
+
+- Use PSRAM framebuffer
+- Use DMA transfers
+- Use double buffering

@@ -1,15 +1,33 @@
-# LVGL Display Configuration
+# LVGL Configuration for ESP32 RGB Displays
 
-Recommended settings for 800×480 RGB displays.
+Recommended configuration for 800×480 displays.
 
+---
 
+## Color Depth
+
+```
 LV_COLOR_DEPTH 16
+```
 
+---
 
-Framebuffer allocation:
+## Framebuffer Allocation
+
+Allocate framebuffer in PSRAM.
+
+Example:
 
 ```cpp
 heap_caps_malloc(size, MALLOC_CAP_SPIRAM | MALLOC_CAP_DMA);
 ```
 
-Double buffering recommended.
+## Double Buffering
+
+Recommended for smooth animation.
+
+Benefits:
+
+- reduced tearing
+- smoother rendering
+- higher FPS
