@@ -1,0 +1,6 @@
+site_name: Display Lab
+theme:
+  name: material
+
+nav:
+  - Home: docs/index.md
